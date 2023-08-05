@@ -1,0 +1,4 @@
+1. Strategy Design Pattern for encryption of documents
+As part of the web services you are providing, a set of documents need to be encrypted before they are stored at a specific location in the cloud; say S3 bucket in AWS cloud.
+
+Customer can choose various level of encryption, and there are cost associated with level of encryption and security. It may start with NULL encryption - which is basically no encryption. Apart from that, customer can choose from variety of encryptions such as "Triple DES", "RSA", "AES" etc.
