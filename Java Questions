@@ -1,8 +1,8 @@
 1. Can a functional interface extend/inherit another interface?
- Yes, if other interface doesnot have abstract method
+Answer: Yes, if other interface doesnot have abstract method
 2. What is the lambda expression in Java and How does a lambda expression relate to a functional interface?
 
-Lambda expression is a type of function without a name. It may or may not have results and parameters. 
+Answer: Lambda expression is a type of function without a name. It may or may not have results and parameters. 
 It is known as an anonymous function as it does not have type information by itself. 
 It is executed on-demand. 
 It is beneficial in iterating, filtering, and extracting data from a collection. 
@@ -10,16 +10,25 @@ As lambda expressions are similar to anonymous functions, they can only be appli
 It will infer the return type, type, and several arguments from the signature of the abstract method of functional interface.
 
 3. What is Type casting in Java?
-When we assign a value of one data type to the different data type then these two data types may not be compatible and needs a conversion. If the data types are compatible (for example assigning int value to long) then java does automatic conversion and does not require casting. However if the data types are not compatible then they need to be casted for conversion.
+Answer:When we assign a value of one data type to the different data type then these two data types may not be compatible and needs a conversion. If the data types are compatible (for example assigning int value to long) then java does automatic conversion and does not require casting. However if the data types are not compatible then they need to be casted for conversion.
 
 4. What are the main concepts of OOPs in Java?
 
 5. What is the difference between HashTable and ConcurrentHashMap
-HashMap is non-Synchronized in nature i.e. HashMap is not Thread-safe whereas ConcurrentHashMap is Thread-safe in nature. HashMap performance is relatively high because it is non-synchronized in nature and any number of threads can perform simultaneously. But ConcurrentHashMap performance is low sometimes because sometimes Threads are required to wait on ConcurrentHashMap. While one thread is Iterating the HashMap object, if other thread try to add/modify the contents of Object then we will get Run-time exception saying ConcurrentModificationException.
+Answer:HashMap is non-Synchronized in nature i.e. HashMap is not Thread-safe whereas ConcurrentHashMap is Thread-safe in nature. HashMap performance is relatively high because it is non-synchronized in nature and any number of threads can perform simultaneously. But ConcurrentHashMap performance is low sometimes because sometimes Threads are required to wait on ConcurrentHashMap. While one thread is Iterating the HashMap object, if other thread try to add/modify the contents of Object then we will get Run-time exception saying ConcurrentModificationException.
 Whereas In ConcurrentHashMap we wont get any exception while performing any modification at the time of Iteration. Using HashMap
 
 6. Why is multiple inheritance not supported in java?
 
 7. Briefly explain the concept of constructor overloading
 
-8. 
+8. Why and when should I use Stack or Queue data structures instead of Arrays/Lists?
+
+Answer:Because they help manage your data in more a particular way than arrays and lists. 
+It means that when you're debugging a problem, you won't have to wonder if someone randomly inserted an element into the middle of your list, 
+messing up some invariants. Arrays and lists are random access. They are very flexible and also easily corruptible. 
+If you want to manage your data as FIFO or LIFO it's best to use those, already implemented, collections. More practically you should: Use a queue when you want to get things out in the order that you put them in (FIFO) Use a stack when you want to get things out in the reverse order than you put them in (LIFO) Use a list when you want to get anything out, regardless of when you put them in (and when you don't want them to automatically be removed).
+
+9. Given a LinkedList(LL) Node, How would you determine, Whether the given Node is, Single LL, Double LL or Circular LL?
+Answer: Read/Refer the Node, - If the Node has both Next(forward) & Previous(Back) nodes then it is Double LL - If the Node has only Next(forward) then its Single LL - Fix the start Node, Note the address, Traverse each Node 1 by 1 using next Node and at one point, you will converge where next Node address will be the same of Previous Node, this is Cicular LL - Traverse each Node 1 by 1 using next Node and at one point you will end with NULL. 
+(this is Doubel LL)
