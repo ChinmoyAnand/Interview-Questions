@@ -1,2 +1,10 @@
 1. Can a functional interface extend/inherit another interface?
  Yes, if other interface doesnot have abstract method
+2. What is the lambda expression in Java and How does a lambda expression relate to a functional interface?
+
+Lambda expression is a type of function without a name. It may or may not have results and parameters. 
+It is known as an anonymous function as it does not have type information by itself. 
+It is executed on-demand. 
+It is beneficial in iterating, filtering, and extracting data from a collection. 
+As lambda expressions are similar to anonymous functions, they can only be applied to the single abstract method of Functional Interface. 
+It will infer the return type, type, and several arguments from the signature of the abstract method of functional interface.
