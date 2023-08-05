@@ -36,6 +36,10 @@ After that, you can implement on or more of following:
 •	Content Delivery Networks – Distributed network of proxy servers and their data centers.
 •	Remote Service – Enables the remote access information that resides on a network of IT devices.
 
+6. What is the use of Profiles in spring boot?
+
+While developing the application we deal with multiple environments such as dev, QA, Prod, and each environment requires a different configuration. For eg., we might be using an embedded H2 database for dev but for prod, we might have proprietary Oracle or DB2. Even if DBMS is the same across the environment, the URLs will be different. To make this easy and clean, Spring has the provision of Profiles to keep the separate configuration of environments.
+
 
 ------------
 
