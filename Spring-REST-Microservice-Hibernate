@@ -52,6 +52,9 @@ Application Context is eagerly loaded and Bean factory is lazily loaded context,
 features like Internationalization, Annotations, AOP etc.
 
 10. 
+What will happen if we don’t have no-args constructor in Entity bean?
+Answer: Hibernate uses Reflection API to create instance of Entity beans, usually when you call get() or load() methods. 
+The method Class.newInstance() is used for this and it requires no-args constructor. So if you won’t have no-args constructor in entity beans, hibernate will fail to instantiate it and you will get HibernateException.
 ------------
 
 - Search an element in a sorted and rotated array
