@@ -1,4 +1,11 @@
-Why do we create INDEX? Write a syntax to create composite index.
+1. Why do we create INDEX? Write a syntax to create composite index.
 
 CREATE INDEX index_name
 on table_name (column1, column2);
+
+
+2. Client has raised a ticket to optimize the existing SQL query, what all scenario you would think to optimize the query?
+SELECT fields instead of SELECT * 
+Create joins with INNER JOIN rather than WHERE 
+Use WHERE instead of HAVING 
+Use Index on frequently used where condition variables
