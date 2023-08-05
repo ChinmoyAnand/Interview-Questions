@@ -8,3 +8,18 @@ It is executed on-demand.
 It is beneficial in iterating, filtering, and extracting data from a collection. 
 As lambda expressions are similar to anonymous functions, they can only be applied to the single abstract method of Functional Interface. 
 It will infer the return type, type, and several arguments from the signature of the abstract method of functional interface.
+
+3. What is Type casting in Java?
+When we assign a value of one data type to the different data type then these two data types may not be compatible and needs a conversion. If the data types are compatible (for example assigning int value to long) then java does automatic conversion and does not require casting. However if the data types are not compatible then they need to be casted for conversion.
+
+4. What are the main concepts of OOPs in Java?
+
+5. What is the difference between HashTable and ConcurrentHashMap
+HashMap is non-Synchronized in nature i.e. HashMap is not Thread-safe whereas ConcurrentHashMap is Thread-safe in nature. HashMap performance is relatively high because it is non-synchronized in nature and any number of threads can perform simultaneously. But ConcurrentHashMap performance is low sometimes because sometimes Threads are required to wait on ConcurrentHashMap. While one thread is Iterating the HashMap object, if other thread try to add/modify the contents of Object then we will get Run-time exception saying ConcurrentModificationException.
+Whereas In ConcurrentHashMap we wont get any exception while performing any modification at the time of Iteration. Using HashMap
+
+6. Why is multiple inheritance not supported in java?
+
+7. Briefly explain the concept of constructor overloading
+
+8. 
