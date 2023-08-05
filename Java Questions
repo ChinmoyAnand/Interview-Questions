@@ -1,0 +1,2 @@
+1. Can a functional interface extend/inherit another interface?
+ Yes, if other interface doesnot have abstract method
