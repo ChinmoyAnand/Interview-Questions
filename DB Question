@@ -1,1 +1,4 @@
+Why do we create INDEX? Write a syntax to create composite index.
 
+CREATE INDEX index_name
+on table_name (column1, column2);
