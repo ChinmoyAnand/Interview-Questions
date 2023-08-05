@@ -9,5 +9,7 @@ https://www.youtube.com/watch?v=LPFhl65R7ww
 int shares = { 2, 4, 7, 3, 5}; E.g. share price on Monday it was 2/-, on Tuesday it was 4/-, 
 and so on So my maximum profit would be 5/- , if I buy share on Monday and sell on Wednesday.
 
+4. Longest Substring Without Repeating Characters
+example : 1 Input: s = "abcabcbb" output = "abc" Example 2 : Input "fffff" output ="f"
 
 
