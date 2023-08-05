@@ -1,8 +1,10 @@
 Java Interview:
 
-- [ ] SpringBoot caching such as in-memory caching, distributed caching, and caching annotations. 
-- [ ] How you will get to know how much time took to complete one request in spring boot.
-- [ ] Search an element in a sorted and rotated array
+- SpringBoot caching such as in-memory caching, distributed caching, and caching annotations. 
+
+- How you will get to know how much time took to complete one request in spring boot.
+
+- Search an element in a sorted and rotated array
 - [ ] What is SAGA pattern, and when would you use it? Explain in detail.
 Ideal Answer (5 star)
 Each microservice has its own database. Some business transactions, however, span multiple service so you need a mechanism to ensure data consistency across services.
