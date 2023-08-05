@@ -1,4 +1,4 @@
- Spring / REST Interview:
+ Spring / REST / Microservice Interview:
 
 1. SpringBoot caching such as in-memory caching, distributed caching, and caching annotations. 
 
@@ -24,6 +24,17 @@ After that, you can implement on or more of following:
 2. When your server receives down stream REST API, respond from the cache; but immediately after that, asynchronously refresh your cache from upstream server(s).
 3. Issue GIMS request if you are at more than half the time between last refresh check and cache expiry.
 4. If your upstream service has put too conservative Expiry header, then you can add additional logic to issue GIMS even after cache expiry using rate of change of data algorithm.  Let's say, t0 is when you received original data.  Expiry header says response will expire in 5 days.  So, on 6th day, you issue GIMS.  If it's still not expired, you assume effective expiry date = t0 + 5 days + 2 * (now - expiry as per Expires: header).  So, you won't check for 2 more days.  On 8th day, you again check issue GIMS.  If server ever returns 200 ok response, t0 resets.
+
+5. How does Microservice Architecture work?
+
+•	Clients – Different users from various devices send requests.
+•	Identity Providers – Authenticates user or client’s identities and issues security tokens.
+•	API Gateway – Handles client requests.
+•	Static Content – Houses all the content of the system.
+•	Management – Balances services on nodes and identifies failures.
+•	Service Discovery – A guide to find the route of communication between micro services.
+•	Content Delivery Networks – Distributed network of proxy servers and their data centers.
+•	Remote Service – Enables the remote access information that resides on a network of IT devices.
 
 
 ------------
