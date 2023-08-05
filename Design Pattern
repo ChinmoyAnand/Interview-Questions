@@ -1,4 +1,13 @@
 1. Strategy Design Pattern for encryption of documents
 As part of the web services you are providing, a set of documents need to be encrypted before they are stored at a specific location in the cloud; say S3 bucket in AWS cloud.
 
-Customer can choose various level of encryption, and there are cost associated with level of encryption and security. It may start with NULL encryption - which is basically no encryption. Apart from that, customer can choose from variety of encryptions such as "Triple DES", "RSA", "AES" etc.
+Customer can choose various level of encryption, and there are cost associated with level of encryption and security. 
+It may start with NULL encryption - which is basically no encryption. Apart from that, customer can choose from variety of encryptions 
+such as "Triple DES", "RSA", "AES" etc.
+
+2. Explain the working of a College internet or a Corporate Internet which restricts few sites access using design patterns.
+PROXY DESIGN PATTERN.
+
+Proxy Design Pattern provides controlled access of a functionality.The client, and each proxy, believes it is delegating messages to the real server.
+
+The proxy first checks the host you are connecting to, if it is not part of restricted site list, then it connects to the real internet.
