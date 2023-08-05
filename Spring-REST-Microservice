@@ -20,10 +20,10 @@ Depending on the rate at which you expect the information to change, you can hav
 
 After that, you can implement on or more of following:
 
-1. Issue "GET + If-modified-since" (GIMS) request instead of simple GET request.
-2. When your server receives down stream REST API, respond from the cache; but immediately after that, asynchronously refresh your cache from upstream server(s).
-3. Issue GIMS request if you are at more than half the time between last refresh check and cache expiry.
-4. If your upstream service has put too conservative Expiry header, then you can add additional logic to issue GIMS even after cache expiry using rate of change of data algorithm.  Let's say, t0 is when you received original data.  Expiry header says response will expire in 5 days.  So, on 6th day, you issue GIMS.  If it's still not expired, you assume effective expiry date = t0 + 5 days + 2 * (now - expiry as per Expires: header).  So, you won't check for 2 more days.  On 8th day, you again check issue GIMS.  If server ever returns 200 ok response, t0 resets.
+- Issue "GET + If-modified-since" (GIMS) request instead of simple GET request.
+- When your server receives down stream REST API, respond from the cache; but immediately after that, asynchronously refresh your cache from upstream server(s).
+- Issue GIMS request if you are at more than half the time between last refresh check and cache expiry.
+- If your upstream service has put too conservative Expiry header, then you can add additional logic to issue GIMS even after cache expiry using rate of change of data algorithm.  Let's say, t0 is when you received original data.  Expiry header says response will expire in 5 days.  So, on 6th day, you issue GIMS.  If it's still not expired, you assume effective expiry date = t0 + 5 days + 2 * (now - expiry as per Expires: header).  So, you won't check for 2 more days.  On 8th day, you again check issue GIMS.  If server ever returns 200 ok response, t0 resets.
 
 5. How does Microservice Architecture work?
 
@@ -40,7 +40,18 @@ After that, you can implement on or more of following:
 
 While developing the application we deal with multiple environments such as dev, QA, Prod, and each environment requires a different configuration. For eg., we might be using an embedded H2 database for dev but for prod, we might have proprietary Oracle or DB2. Even if DBMS is the same across the environment, the URLs will be different. To make this easy and clean, Spring has the provision of Profiles to keep the separate configuration of environments.
 
+7. How can we use Jetty instead of tomcat in our web application?
 
+8. What is the use of Inversion of controller and Dependency Injection? Are both the same?
+
+IOC is control inversed to Spring framework instead of creating the beans manually, dependency injection to make available the instance wherever required by mentioning Autowired
+
+9. What is difference between Application Context and Bean Factory? What are the additional features we have in Application Context?
+
+Application Context is eagerly loaded and Bean factory is lazily loaded context, even Application context have some additional 
+features like Internationalization, Annotations, AOP etc.
+
+10. 
 ------------
 
 - Search an element in a sorted and rotated array
