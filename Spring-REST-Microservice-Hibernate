@@ -66,5 +66,11 @@ The context is provided by the client to the server using which the server proce
 13. Interservice communication? How to secure a microservice? Authentication/authorization approach?
 14. How to maintain data consistency for 2 Microservices with each having its own database?
 
+15. How do you control the concurrent Active session using Spring Security?
+
+Another Spring interview question is based on Out of box feature provided by the Spring framework. 
+You can easily control How many active sessions a user can have with a Java application by using Spring Security. 
+Apart from that Spring Security also provides the "remember me" feature which you can use to provide easier access for your users by remembering their login details on their personal computer.
+
 ------------
 
