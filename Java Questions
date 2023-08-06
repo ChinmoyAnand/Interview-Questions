@@ -32,3 +32,16 @@ If you want to manage your data as FIFO or LIFO it's best to use those, already 
 9. Given a LinkedList(LL) Node, How would you determine, Whether the given Node is, Single LL, Double LL or Circular LL?
 Answer: Read/Refer the Node, - If the Node has both Next(forward) & Previous(Back) nodes then it is Double LL - If the Node has only Next(forward) then its Single LL - Fix the start Node, Note the address, Traverse each Node 1 by 1 using next Node and at one point, you will converge where next Node address will be the same of Previous Node, this is Cicular LL - Traverse each Node 1 by 1 using next Node and at one point you will end with NULL. 
 (this is Doubel LL)
+
+10. What are the most common memory leaks, and how would you deal with them?
+Memory Leakage via Static Fields The common case that could result in a memory leak is the high use of static variables. We must take caution when utilizing static variables. When collections or large objects are declared as static, they remain in memory across the application's lifetime, consuming valuable memory that could have been used somewhere else. As a result, reduce using static variables 
+and, while using singletons, use an implementation that lazily loads the object rather than eagerly loading it. 
+Unclosed Resources A memory leak in Java might happen if you neglect to close a resource or if you don't remove a reference to an object. 
+File/Text buffers not closed. (as per reported) 
+Improper equals() and hashCode() Implementations When creating new classes, it's typical to forget to provide proper override equals() and hashCode() methods. These methods are used by HashSet and HashMap in a variety of operations, and if they aren't overridden correctly, they can cause memory leaks. Map map = new HashMap<>(); for(int i=0; i<10; i++) { map.put(new Employee("Ban"), 1); } Here, if we don't overrides equals() and hashCode() methods in Employee Class, duplicate objects will collect and take up more memory, which is why several instances will get created in memory. Therefore, if we would have overridden the equals() and hashCode() methods in Employee class, this Map would only contain one Employee object. 
+finalize() Methods When the finalize() method of a class is overridden, objects of that class are not immediately garbage collected. Instead, they are queued for finalisation by the GC, which occurs at a later time. Furthermore, if the code in the finalize() method is not optimal, and the finalizer queue cannot keep up with the Java garbage collector, 
+our application will eventually encounter an OutOfMemoryError.
+
+11. Why Java doesn’t support multiple inheritances? How about with interfaces?
+
+12. 
