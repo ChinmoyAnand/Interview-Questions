@@ -20,14 +20,24 @@ example : 1 Input: s = "abcabcbb" output = "abc" Example 2 : Input "fffff" outpu
 
 8. Search an element in a sorted and rotated array
 
+9. How to Find all Pairs in Array of Integers Whose sum is Equal to a Given Number.
+
+10. write a program to remove adjacent duplicate characters from a string? 
+ex: cnncbc output : bc
+
+11. 
+
+
 
 
 ==========================================================================================================
 ===============================    JAVA 8 Problems  ======================================================
 ==========================================================================================================
 
-1. Find the sum of all even present in List of Integer using Stream APIs and without using sum method?
-2. Increment salary by 10% then return list of employees with salary greater tahn 10000?
+1. Find the sum of all even present in the List of Integer using Stream APIs and without using sum method?
+2. Increment salary by 10% then return the list of employees with a salary greater than 10000?
+3. Write a program to print the first non-repeating character in the given string using java8
+
 
 
 
