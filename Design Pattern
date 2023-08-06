@@ -11,3 +11,12 @@ PROXY DESIGN PATTERN.
 Proxy Design Pattern provides controlled access of a functionality.The client, and each proxy, believes it is delegating messages to the real server.
 
 The proxy first checks the host you are connecting to, if it is not part of restricted site list, then it connects to the real internet.
+
+3. If you are working with an online trading application, you may want the functionality to queue trades placed after hours and process them when the stock market opens. You also need to asynchronously handle the order statuses sent from the stock exchange like partially-filled, rejected, fully filled, etc, and update the online order information. 
+How will you go about solution this?
+
+4. You need to change the logic of a module that several other modules depend on. How will you make the necessary changes without impacting the dependent modules?
+
+5. spring version 2.3 - moving application to 2.5 version, getting conflicts because of dependency how will you reslove conflicts ?
+
+6. 
