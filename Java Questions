@@ -44,4 +44,5 @@ our application will eventually encounter an OutOfMemoryError.
 
 11. Why Java doesn’t support multiple inheritances? How about with interfaces?
 
-12. 
+12. What is the main objective of garbage collection?
+Answer: GC 3 objectives: 1. Identify unused obj 2)clean unused obj 3)rearrange remaining obj to optimise memory usage
