@@ -12,4 +12,12 @@ and so on So my maximum profit would be 5/- , if I buy share on Monday and sell 
 4. Longest Substring Without Repeating Characters
 example : 1 Input: s = "abcabcbb" output = "abc" Example 2 : Input "fffff" output ="f"
 
+5. Find the second largest word in String like "I am good programmer" >> "good"
+
+6. Remove duplicate chars like "aabbccd" > "abcd"
+
+7. Check if two words are Anagrams like "fired" and "fried"
+
+
+
 
