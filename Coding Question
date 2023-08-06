@@ -18,6 +18,18 @@ example : 1 Input: s = "abcabcbb" output = "abc" Example 2 : Input "fffff" outpu
 
 7. Check if two words are Anagrams like "fired" and "fried"
 
+8. Search an element in a sorted and rotated array
+
+
+
+==========================================================================================================
+===============================    JAVA 8 Problems  ======================================================
+==========================================================================================================
+
+1. Find the sum of all even present in List of Integer using Stream APIs and without using sum method?
+2. Increment salary by 10% then return list of employees with salary greater tahn 10000?
+
+
 
 
 
