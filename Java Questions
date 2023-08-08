@@ -46,3 +46,18 @@ our application will eventually encounter an OutOfMemoryError.
 
 12. What is the main objective of garbage collection?
 Answer: GC 3 objectives: 1. Identify unused obj 2)clean unused obj 3)rearrange remaining obj to optimise memory usage
+
+13. What Is a Default Method ?
+We can use a default method to add a new functionality to an interface while maintaining backward compatibility with classes that are already implementing the interface:
+
+public interface Vehicle {
+    public void move();
+    default void hoot() {
+        System.out.println("peep!");
+    }
+}
+Usually, when a new abstract method is added to an interface, all implementing classes will break until they implement the new abstract method. In Java 8, this problem has been solved by the use of default method.
+
+For example, Collection interface does not have forEach method declaration. Thus, adding such method would simply break the whole collections API.
+
+Java 8 introduces default method so that Collection interface can have a default implementation of forEach method without requiring the classes implementing this interface to implement the same.
