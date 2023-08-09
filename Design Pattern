@@ -19,4 +19,28 @@ How will you go about solution this?
 
 5. spring version 2.3 - moving application to 2.5 version, getting conflicts because of dependency how will you reslove conflicts ?
 
-6. 
+6. Adapter design patter - structural.
+Adapter design pattern - Software design pattern
+You have two incompatible interfaces : MediaPlayer and MediaPackage. MP3 class is an implementation of the MediaPlayer interface and we have VLC and MP4 as implementations of the MediaPackage interface. We want to use MediaPackage implementations as MediaPlayer instances.
+
+What design pattern will you use to work with two incompatible classes?
+
+
+Ideal Answer (5 star)
+ADAPTER DESIGN PATTERN is to be used here.
+
+An Adapter Pattern says that just "converts the interface of a class into another interface that a client wants".
+In other words, to provide the interface according to client requirement while using the services of a class with a different interface.
+The Adapter Pattern is also known as Wrapper.
+
+Advantage of Adapter Pattern
+ 1. It allows two or more previously incompatible objects to interact.
+ 2. It allows reusability of existing functionality.
+
+
+Usage of Adapter pattern:
+ 1. When an object needs to utilize an existing class with an incompatible interface.
+ 2. When you want to create a reusable class that cooperates with classes which don't have compatible interfaces.
+ 3. When you want to create a reusable class that cooperates with classes which don't have compatible interfaces.
+
+sample code : https://gist.github.com/akki5256/88d3e28934ec3519914ce72184d1edcf
