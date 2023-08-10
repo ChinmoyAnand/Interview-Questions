@@ -21,7 +21,8 @@ How will you go about solution this?
 
 6. Adapter design patter - structural.
 Adapter design pattern - Software design pattern
-You have two incompatible interfaces : MediaPlayer and MediaPackage. MP3 class is an implementation of the MediaPlayer interface and we have VLC and MP4 as implementations of the MediaPackage interface. We want to use MediaPackage implementations as MediaPlayer instances.
+You have two incompatible interfaces : MediaPlayer and MediaPackage. 
+MP3 class is an implementation of the MediaPlayer interface and we have VLC and MP4 as implementations of the MediaPackage interface. We want to use MediaPackage implementations as MediaPlayer instances.
 
 What design pattern will you use to work with two incompatible classes?
 
@@ -44,3 +45,15 @@ Usage of Adapter pattern:
  3. When you want to create a reusable class that cooperates with classes which don't have compatible interfaces.
 
 sample code : https://gist.github.com/akki5256/88d3e28934ec3519914ce72184d1edcf
+
+7. Which Design pattern will you use for below scenario? Facade
+
+ShopKeeper selling Mobiles Shopkeeper has a list of all the phones available in his shop with all the details of phones like model, price, offers, etc. When a customer approaches shopkeeper, the customer inquires the shopkeeper of the phone he wants or the phones the shopkeeper has. The shopkeeper simply answers the customers queries, without giving him all the information that he has, but giving only the information needed by the customer.
+
+Other similar examples:
+
+-Starting a car (just by turning the key, we start the car) -Ticket booking websites (using a single interface we can book tickets, hotels, trains individually or together) -Microwave oven which provides you preprogrammed switches etc
+Answer::
+Facade Design Pattern - All the complex processes happening in the system are not shown to the client, but only a simplified view is provided for the client to access. It simply provides an Interface without worrying about the implementation. It hides internal complexity behind a single interface that appears simple on the outside. It promotes loose coupling between subsystems and its clients.
+
+8. 
