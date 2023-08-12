@@ -1,7 +1,8 @@
 1. Can a functional interface extend/inherit another interface?
 Answer: Yes, if other interface doesnot have abstract method
-2. What is the lambda expression in Java and How does a lambda expression relate to a functional interface?
 
+
+2. What is the lambda expression in Java and How does a lambda expression relate to a functional interface?
 Answer: Lambda expression is a type of function without a name. It may or may not have results and parameters. 
 It is known as an anonymous function as it does not have type information by itself. 
 It is executed on-demand. 
@@ -9,29 +10,36 @@ It is beneficial in iterating, filtering, and extracting data from a collection.
 As lambda expressions are similar to anonymous functions, they can only be applied to the single abstract method of Functional Interface. 
 It will infer the return type, type, and several arguments from the signature of the abstract method of functional interface.
 
+
 3. What is Type casting in Java?
 Answer:When we assign a value of one data type to the different data type then these two data types may not be compatible and needs a conversion. If the data types are compatible (for example assigning int value to long) then java does automatic conversion and does not require casting. However if the data types are not compatible then they need to be casted for conversion.
 
+
 4. What are the main concepts of OOPs in Java?
+
 
 5. What is the difference between HashTable and ConcurrentHashMap
 Answer:HashMap is non-Synchronized in nature i.e. HashMap is not Thread-safe whereas ConcurrentHashMap is Thread-safe in nature. HashMap performance is relatively high because it is non-synchronized in nature and any number of threads can perform simultaneously. But ConcurrentHashMap performance is low sometimes because sometimes Threads are required to wait on ConcurrentHashMap. While one thread is Iterating the HashMap object, if other thread try to add/modify the contents of Object then we will get Run-time exception saying ConcurrentModificationException.
 Whereas In ConcurrentHashMap we wont get any exception while performing any modification at the time of Iteration. Using HashMap
 
+
 6. Why is multiple inheritance not supported in java?
+
 
 7. Briefly explain the concept of constructor overloading
 
-8. Why and when should I use Stack or Queue data structures instead of Arrays/Lists?
 
+8. Why and when should I use Stack or Queue data structures instead of Arrays/Lists?
 Answer:Because they help manage your data in more a particular way than arrays and lists. 
 It means that when you're debugging a problem, you won't have to wonder if someone randomly inserted an element into the middle of your list, 
 messing up some invariants. Arrays and lists are random access. They are very flexible and also easily corruptible. 
 If you want to manage your data as FIFO or LIFO it's best to use those, already implemented, collections. More practically you should: Use a queue when you want to get things out in the order that you put them in (FIFO) Use a stack when you want to get things out in the reverse order than you put them in (LIFO) Use a list when you want to get anything out, regardless of when you put them in (and when you don't want them to automatically be removed).
 
+
 9. Given a LinkedList(LL) Node, How would you determine, Whether the given Node is, Single LL, Double LL or Circular LL?
 Answer: Read/Refer the Node, - If the Node has both Next(forward) & Previous(Back) nodes then it is Double LL - If the Node has only Next(forward) then its Single LL - Fix the start Node, Note the address, Traverse each Node 1 by 1 using next Node and at one point, you will converge where next Node address will be the same of Previous Node, this is Cicular LL - Traverse each Node 1 by 1 using next Node and at one point you will end with NULL. 
 (this is Doubel LL)
+
 
 10. What are the most common memory leaks, and how would you deal with them?
 Memory Leakage via Static Fields The common case that could result in a memory leak is the high use of static variables. We must take caution when utilizing static variables. When collections or large objects are declared as static, they remain in memory across the application's lifetime, consuming valuable memory that could have been used somewhere else. As a result, reduce using static variables 
@@ -42,10 +50,14 @@ Improper equals() and hashCode() Implementations When creating new classes, it's
 finalize() Methods When the finalize() method of a class is overridden, objects of that class are not immediately garbage collected. Instead, they are queued for finalisation by the GC, which occurs at a later time. Furthermore, if the code in the finalize() method is not optimal, and the finalizer queue cannot keep up with the Java garbage collector, 
 our application will eventually encounter an OutOfMemoryError.
 
+
 11. Why Java doesn’t support multiple inheritances? How about with interfaces?
+
+
 
 12. What is the main objective of garbage collection?
 Answer: GC 3 objectives: 1. Identify unused obj 2)clean unused obj 3)rearrange remaining obj to optimise memory usage
+
 
 13. What Is a Default Method ?
 We can use a default method to add a new functionality to an interface while maintaining backward compatibility with classes that are already implementing the interface:
@@ -62,6 +74,10 @@ For example, Collection interface does not have forEach method declaration. Thus
 
 Java 8 introduces default method so that Collection interface can have a default implementation of forEach method without requiring the classes implementing this interface to implement the same.
 
+
 14. What is the advantage of Metaspace over PermGen?
 
 PerGen was fixed in size and could not grow dynamically, while Metaspace can grow dynamically and does have any type of size constraint.
+Due to its limited size permgen was removed in Java8 and replaced by MetaSpace.
+https://www.baeldung.com/java-permgen-metaspace
+
