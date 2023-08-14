@@ -1,0 +1,9 @@
+1. Your team has recently deployed a new application on Kubernetes, but you have noticed that it is experiencing frequent downtime due to pod failures. How would you configure Kubernetes to automatically recover failed pods and ensure high availability for the application?
+
+
+2.What is Elastic Load Balancer (ELB)?
+Elastic Load Balancing (ELB) is a load-balancing service for Amazon Web Services (AWS) deployments. 
+ELB automatically distributes incoming application traffic and scales resources to meet traffic demand.
+It also helps an IT team adjust capacity according to incoming application and network traffic. 
+Load balancing divides the amount of work that a computer has to do among multiple computers so that users, in general, get served faster. ELB offers enhanced features including: Detection of unhealthy Elastic Compute Cloud (EC2) instances. Spreading instances across healthy channels only. Flexible cipher support. 
+Centralized management of Secure Sockets Layer (SSL) certificates. Optional public key authentication. Support for both IPv4 and IPv6.

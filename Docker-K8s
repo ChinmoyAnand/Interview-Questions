@@ -1,1 +1,0 @@
-1. Your team has recently deployed a new application on Kubernetes, but you have noticed that it is experiencing frequent downtime due to pod failures. How would you configure Kubernetes to automatically recover failed pods and ensure high availability for the application?
