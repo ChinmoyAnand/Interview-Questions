@@ -25,7 +25,13 @@ example : 1 Input: s = "abcabcbb" output = "abc" Example 2 : Input "fffff" outpu
 10. write a program to remove adjacent duplicate characters from a string? 
 ex: cnncbc output : bc
 
-11. 
+11. Given an array of sorted integers find the closest number based om user input
+Example - Input :arr[] = {2, 5, 6, 7, 8, 8, 9}; Target number = 4 Output : 5
+
+Target number = 3 Output : 2
+
+A simple solution is to traverse through the given array and keep track of absolute difference of current element with every element. 
+Finally return the element that has minimum absolution difference. An efficient solution is to use Binary Search.
 
 
 
