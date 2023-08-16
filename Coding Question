@@ -35,7 +35,14 @@ Finally return the element that has minimum absolution difference. An efficient 
 
 
 
+12. Java 8 program to Count Strings whose length is greater than 3 in List
+ List stringList = Arrays.asList("Hello","Interview",
+"Questions","Answers","Ram","for");
+        long count = stringList.stream().filter(str -> str.length() > 3).count();
+        System.out.println("String count with greater than 3 digit : " + count);
 
+
+13. 
 ==========================================================================================================
 ===============================    JAVA 8 Problems  ======================================================
 ==========================================================================================================
