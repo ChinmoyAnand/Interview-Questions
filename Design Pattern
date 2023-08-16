@@ -56,4 +56,18 @@ Other similar examples:
 Answer::
 Facade Design Pattern - All the complex processes happening in the system are not shown to the client, but only a simplified view is provided for the client to access. It simply provides an Interface without worrying about the implementation. It hides internal complexity behind a single interface that appears simple on the outside. It promotes loose coupling between subsystems and its clients.
 
-8. 
+8. Design pattern question - Decorator pattern
+You are designing a specialized e-commerce website. Lot of items sold by the website have add-ons. Such as, extended warranty with certain electronics items; batteries for some of the items and so on.
+
+All products are arranged in proper catalog and a proper object model with inheritance is already created. To get the price for the given item, there's already an overloaded function defined such as this:
+
+Parent (or Super) class: getPrice() is implemented as void. Child classes have getPrice () which returns the actual price of the item.
+
+Instead of creating more sub classes such as ItemWithWarranty and ItemWithExtraBatteries().
+
+Which design pattern will you use and how?
+
+You can use "Decorator" pattern for this situation.
+
+In the given example, ExtendedWaranty and ExtraBatteries classes can be decorators to the given "Item"; and can inherit from the same Base Item.  
+These classes will have "has a" relationship to the original Item.
