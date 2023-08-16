@@ -72,5 +72,19 @@ Another Spring interview question is based on Out of box feature provided by the
 You can easily control How many active sessions a user can have with a Java application by using Spring Security. 
 Apart from that Spring Security also provides the "remember me" feature which you can use to provide easier access for your users by remembering their login details on their personal computer.
 
+16. What are the HTTP Methods?
+
+HTTP Methods are also known as HTTP Verbs. 
+They form a major portion of uniform interface restriction followed by the REST that specifies what action has to be followed to get the requested resource. 
+
+Below are some examples of HTTP Methods: 
+
+•GET: This is used for fetching details from the server and is basically a read-only operation. 
+•POST: This method is used for the creation of new resources on the server. 
+•PUT: This method is used to update the old/existing resource on the server or to replace the resource. 
+•DELETE: This method is used to delete the resource on the server. 
+•PATCH: This is used for modifying the resource on the server. 
+•OPTIONS: This fetches the list of supported options of resources present on the server. 
+The POST, GET, PUT, DELETE corresponds to the create, read, update, delete operations which are most commonly called CRUD Operations
 ------------
 
