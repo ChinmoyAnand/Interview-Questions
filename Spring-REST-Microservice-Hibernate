@@ -86,5 +86,26 @@ Below are some examples of HTTP Methods:
 •PATCH: This is used for modifying the resource on the server. 
 •OPTIONS: This fetches the list of supported options of resources present on the server. 
 The POST, GET, PUT, DELETE corresponds to the create, read, update, delete operations which are most commonly called CRUD Operations
+
+17. What are the differences between get() and load() method in Hibernate?
+
+The key difference between the get() and load() method is that load() will throw an exception if an object with id passed to them is not found, but get() will return null.
+
+Another important difference is that load can return proxy without hitting the database unless required (when you access any attribute other than id) but get() always go to the database, so sometimes using load() can be faster than the get() method.
+
+Use the load() method, if you know the object exists, and get() method if you are not sure about the object's existence.
+
+18. What’s the difference between @Component, @Controller, @Repository & @Service annotations in Spring?
+
+@Component is used to indicate that a class is a component. These classes are used for auto-detection and configured as bean when annotation based configurations are used.
+
+@Controller is a specific type of component, used in MVC applications and mostly used with RequestMapping annotation.
+
+@Repository annotation is used to indicate that a component is used as a repository and a mechanism to store/retrieve/search data. We can apply this annotation with DAO pattern implementation classes.
+
+@Service is used to indicate that a class is a Service. Usually, the business facade classes that provide some services are annotated with this.
+
+We can use any of the above annotations for a class for auto-detection but different types are provided so that 
+you can easily distinguish the purpose of the annotated classes.
 ------------
 
