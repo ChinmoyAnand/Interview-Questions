@@ -7,3 +7,17 @@ ELB automatically distributes incoming application traffic and scales resources 
 It also helps an IT team adjust capacity according to incoming application and network traffic. 
 Load balancing divides the amount of work that a computer has to do among multiple computers so that users, in general, get served faster. ELB offers enhanced features including: Detection of unhealthy Elastic Compute Cloud (EC2) instances. Spreading instances across healthy channels only. Flexible cipher support. 
 Centralized management of Secure Sockets Layer (SSL) certificates. Optional public key authentication. Support for both IPv4 and IPv6.
+
+3. Can you create two VPCs with the same subnet?
+Can you create two VPCs in the same AWS account and region with same subject, let's say VPC1 with 10.0.0.0/8 and VPC-2 also with 10.0.0.0/8?
+
+No, you cannot create two VPCs with the same subnet. Each subnet in a VPC must have a unique CIDR block.
+
+4. You have an application running on your Amazon EC2 instance. You want to reduce the load on your instance as soon as the CPU utilization reaches 100 percent. 
+How will you do that?
+
+It can be done by creating an autoscaling group to deploy more instances when the 
+CPU utilization exceeds 100 percent and distributing traffic among instances by creating a load balancer 
+and registering the Amazon EC2 instances with it
+
+5. 
