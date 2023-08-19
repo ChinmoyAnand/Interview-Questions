@@ -53,6 +53,19 @@ Interesting tidbits: Check out this interesting relationship between Perfect Num
 
 www.youtube.com/watch?v=T0xKHwQH-4I
 
+
+14. Output array that contains multiplication of all other elements with o[N]
+
+First you loop over entire input array and get a multiplication of all the numbers (remember: you have no 0's in the array). 
+After that, you again go thru the entire array, this time divide the product of all with the specific number. In pseudo code:
+
+product_of_all = 1
+for i in input[N]:
+   product_of_all *= input[i]
+
+for i in input[N]:
+    output[i] = product_of_all / input[i]
+
 ==========================================================================================================
 ===============================    JAVA 8 Problems  ======================================================
 ==========================================================================================================
