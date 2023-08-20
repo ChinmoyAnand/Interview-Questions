@@ -1,0 +1,9 @@
+1. What is observable in Angular and can you tell the difference between Promises and Observable?
+
+Promise is async. It provides single value. Executes asap after creation. Promises can’t be cancelled. No operations are supported by Promises. 
+Observables – both sync and async. Provides multiple values or stream of values. Can be executed whenever required (by using subscribe() method), 
+can be cancelled using unsubscribe() method. It provides multiple operations like map, filter, reduce, etc.
+
+
+2. how to pass data from parent-child and child-parent in angular?
+
