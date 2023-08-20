@@ -66,6 +66,10 @@ for i in input[N]:
 for i in input[N]:
     output[i] = product_of_all / input[i]
 
+
+15. Write a function to find the longest common prefix string amongst an array of strings! Example 1 Input: strs = ["flower","flow","flight"] Output: "fl"
+
+
 ==========================================================================================================
 ===============================    JAVA 8 Problems  ======================================================
 ==========================================================================================================
