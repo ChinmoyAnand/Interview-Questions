@@ -1,0 +1,13 @@
+1) What is Data Log in Kafka?
+
+As we know, messages are retained for a considerable amount of time in Kafka. Moreover, there is flexibility for consumers that they can read as per their convenience. 
+Although, there is a possible case that if Kafka is configured to keep messages for 24 hours and possibly that time consumer is down for time greater than 24 hours, 
+then the consumer may lose those messages. However, still, we can read those messages from last known offset, 
+but only at a condition that the downtime on part of the consumer is just 60 minutes. Moreover, on what consumers are reading from a topic Kafka doesn’t keep state.
+
+
+2) How to verify where the zookeeper stores information about Broker id and Offset numbers? (if He knows ask to write command).
+
+Here is the command to check both metadata of offset and offsets. The offsets are stored in Zookeeper in the in _consumer_offsets topic. 
+$ kafka-console-consumer.sh --consumer.config /tmp/consumer.config --formatter "GroupMetaDataManager\$offsetsMessageFormatter" --zookeeper : --topic _consumer_offsets 
+The above command gives metadata of console consumer.
