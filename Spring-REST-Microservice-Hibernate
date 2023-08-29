@@ -107,5 +107,11 @@ Use the load() method, if you know the object exists, and get() method if you ar
 
 We can use any of the above annotations for a class for auto-detection but different types are provided so that 
 you can easily distinguish the purpose of the annotated classes.
+
+
+19. How to disable spring beans based on specific conditions
+
+Using Conditional annotations : @Conditional, @ConditionalProperty, @ConditionalOnExpressions
+Using  spring profiles
 ------------
 
