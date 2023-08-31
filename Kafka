@@ -11,3 +11,9 @@ but only at a condition that the downtime on part of the consumer is just 60 min
 Here is the command to check both metadata of offset and offsets. The offsets are stored in Zookeeper in the in _consumer_offsets topic. 
 $ kafka-console-consumer.sh --consumer.config /tmp/consumer.config --formatter "GroupMetaDataManager\$offsetsMessageFormatter" --zookeeper : --topic _consumer_offsets 
 The above command gives metadata of console consumer.
+
+3) What ensures load balancing of the server in Kafka?
+
+Ans. As the main role of the Leader is to perform the task of all read and write requests for the partition, 
+whereas Followers passively replicate the leader. Hence, at the time of Leader failing, one of the Followers takeover the role of the Leader. 
+Basically, this entire process ensures load balancing of the servers.
