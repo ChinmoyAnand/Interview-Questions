@@ -27,6 +27,20 @@ After that, you can implement on or more of following:
 
 5. How does Microservice Architecture work?
 
+In Orchestration, we rely on a central system to control and call other Microservices in a certain fashion to complete a given task. The central system maintains the state of each step and sequence of the overall workflow.
+
+Let’s say we want to develop a microservice that will send product recommendation email in a fictitious e-shop. 
+In order to send Recommendations, we need to have access to user’s order history which lies in a different microservices.
+
+In the Orchestration approach, this new microservice for recommendations will make synchronous calls to order service and 
+fetch the relevant data, then based on his past purchases we will calculate the recommendations. 
+Doing this for a million users will become cumbersome and will tightly couple the two microservices.
+
+In Choreography approach, we will use event-based Asynchronous communication where whenever a user makes a purchase, 
+an event will be published by order service. Recommendation service will listen to this event and start building user recommendation. 
+This is a loosely coupled approach and highly scalable. 
+The event, in this case, does not tell about the action, but just the data.
+
 •	Clients – Different users from various devices send requests.
 •	Identity Providers – Authenticates user or client’s identities and issues security tokens.
 •	API Gateway – Handles client requests.
