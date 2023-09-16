@@ -127,5 +127,18 @@ you can easily distinguish the purpose of the annotated classes.
 
 Using Conditional annotations : @Conditional, @ConditionalProperty, @ConditionalOnExpressions
 Using  spring profiles
+
+20. API Gateway
+
+API Gateway is a special class of microservices that meets the need of a single client application (such as android app, web app, angular JS app, iPhone app, etc) and provide it with single entry point to the backend resources (microservices), providing cross-cutting concerns to them such as security, monitoring/metrics & resiliency.
+
+Client Application can access tens or hundreds of microservices concurrently with each request, 
+aggregating the response and transforming them to meet the client application’s needs. 
+Api Gateway can use a client-side load balancer library (Ribbon) to distribute load across instances based on round-robin fashion. It can also do protocol translation i.e. HTTP to AMQP if necessary. It can handle security for protected resources as well.
+
+Features of API Gateway
+
+Spring Cloud DiscoveryClient integration Request Rate Limiting (available in Spring Boot 2.x) 
+Path Rewriting Hystrix Circuit Breaker integration for resiliency
 ------------
 
