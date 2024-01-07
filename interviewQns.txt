@@ -131,8 +131,6 @@ In Choreography approach, we will use event-based Asynchronous communication whe
 How to break a Monolith web service into Microservices?
 You have a legacy monolithic web service. You want to break into multiple loosely coupled microservices. How would you do that?
 
-
-Ideal Answer (5 star)
 Overall approach would look like following:
 1. Design:  Figuring out what are separate "byte sized" microservices?
 2. Getting started:  Start deploying micro services, as well as a single API Gateway to consolidate all micro services under one gateway for ease of communication from client.
@@ -140,3 +138,21 @@ Overall approach would look like following:
 4. Migration strategy
 5. Performance testing; comparing data with older runs.
 
+What Is OAuth? Give an example
+Open Authorization Protocol, otherwise known as OAuth, helps to access client applications using third-party protocols 
+like Facebook, GitHub etc via HTTP. You can also share resources between different sites without the requirement of credentials.
+
+OAuth allows the account information of the end user to be used by a third party like Facebook while keeping it
+ secure (without using or exposing the user’s password). It acts more like an intermediary on the user’s behalf while 
+ providing a token to the server for accessing the required information.
+
+
+ What is the use of @ConfigurationProperties annotation in Spring boot
+
+ConfigurationProperties is used for map properties from config file to class level.
+
+
+What is the difference between ‘of’ and ‘ofNullable’ method on Optional? What are different methods are present on optional and which ones are recommended?
+
+Ideal Answer (5 star)
+of method can throw null pointer expression and ofNullable doesn't throw the exception it will move forward with empty value
