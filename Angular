@@ -7,3 +7,64 @@ can be cancelled using unsubscribe() method. It provides multiple operations lik
 
 2. how to pass data from parent-child and child-parent in angular?
 
+You are building a complex Angular application with multiple components. 
+Explain how you would implement communication between sibling components and between a parent and child component.
+
+Ideal Answer (5 star)
+Between Sibling Components:
+Input/Output Binding:
+Use @Input to pass data from a parent component to a shared service.
+Utilize @Output with EventEmitter for emitting events from one sibling to another.
+Shared Service:
+Create a shared service to manage state or data shared between sibling components.
+Inject the service into both components and communicate via service methods.
+Event Emitters:
+Emit custom events from one component using EventEmitter and listen for them in the other.
+Enables custom communication between sibling components.
+Between Parent and Child Component:
+@Input Decorator:
+Use @Input decorator in the child component to receive data from the parent component.
+Facilitates unidirectional data flow.
+@Output Decorator:
+Emit events from the child component using @Output to inform the parent about specific actions.
+Parent listens for these events and responds accordingly.
+ViewChild/ContentChild:
+Utilize @ViewChild or @ContentChild decorators in the parent to get references to child components.
+Enables direct access to child component properties and methods.
+Service for Indirect Communication:
+Implement a service for indirect communication between parent and child components.
+Facilitates sharing state or triggering actions between them.
+
+3. In a large-scale Angular application, how would you implement lazy loading for optimizing the application's initial load time? Provide examples of modules that you would consider for lazy loading and explain the benefits.
+
+Ideal Answer (5 star)
+
+Module Segmentation:
+Identify feature modules that are not immediately required for the initial view.
+Lazy Loading Modules:
+Convert identified feature modules into lazy-loaded modules.
+Utilize Angular's RouterModule and loadChildren property to implement lazy loading.
+Routing Configuration:
+Adjust routing configuration to load modules lazily when specific routes are accessed.
+Example Modules for Lazy Loading:
+User Profile Module:
+Loaded only when the user navigates to the profile page.
+Contains components, services, and other resources related to user profiles.
+Admin Dashboard Module:
+Loaded only for users with administrative privileges.
+Includes components and features specific to administrative tasks.
+Reports Module:
+Loaded when the user navigates to the reports section.
+Contains components and services related to generating and viewing reports.
+Benefits:
+Reduced Initial Load Time:
+Loads only the essential modules during the initial application load, improving startup performance.
+Improved Performance:
+Optimizes resource utilization by loading modules on-demand, enhancing overall application performance.
+Enhanced User Experience:
+Provides a faster and smoother user experience by delivering critical functionality upfront.
+Scalability:
+Scales well for large applications, preventing unnecessary loading of less frequently used features.
+
+
+4. 
