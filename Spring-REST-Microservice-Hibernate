@@ -142,3 +142,98 @@ Spring Cloud DiscoveryClient integration Request Rate Limiting (available in Spr
 Path Rewriting Hystrix Circuit Breaker integration for resiliency
 ------------
 
+21. You are tasked with designing a new Java microservice for a cloud-native application.
+How would you leverage cloud-native principles and design patterns to ensure scalability, resilience, and efficient resource utilization in a cloud environment?
+
+Ideal Answer (5 star)
+
+Containerization:
+Utilize containerization (e.g., Docker) for packaging the microservice with its dependencies.
+Ensures consistency across different environments and facilitates easy deployment.
+Orchestration:
+Use orchestration tools like Kubernetes to automate deployment, scaling, and management of containers.
+Ensures efficient resource utilization and scalability.
+Statelessness:
+Design microservices to be stateless, allowing easy horizontal scaling.
+State is managed externally (e.g., databases, caches).
+Auto-Scaling:
+Implement auto-scaling based on demand using cloud provider features.
+Ensures efficient resource allocation and cost optimization.
+Resilience and Fault Tolerance:
+Implement circuit breakers and retries to handle faults gracefully.
+Utilize distributed tracing for identifying and resolving issues.
+Externalized Configuration:
+Externalize configuration settings to easily adapt to different environments.
+Facilitates the Twelve-Factor App methodology.
+API Gateway:
+Implement an API gateway for centralized access and to manage routing.
+Facilitates load balancing and improves security.
+Serverless Computing:
+Consider serverless computing for event-driven workloads.
+Reduces operational overhead and aligns with pay-as-you-go models.
+Logging and Monitoring:
+Implement comprehensive logging and monitoring.
+Use cloud-native monitoring tools for real-time insights into application behavior.
+Immutable Infrastructure:
+Treat infrastructure as code and use immutable infrastructure principles.
+Ensures consistency and reproducibility in deployments.
+Data Management:
+Choose cloud-native databases for scalability and resilience.
+Implement sharding or partitioning for efficient data distribution.
+Continuous Integration/Continuous Deployment (CI/CD):
+Implement CI/CD pipelines for automated testing, building, and deployment.
+Facilitates rapid and reliable software delivery.
+
+
+22. REST API Caching -- designing from the server side
+You are developing a Microservice, which serves fairly static data using REST API. For example, details about the Patents filed. Let's assume you have an API to get details about the patent filed; such as GET ./patentDetails/PATENTID/
+
+If the patent is granted, all the details of the patent are now fixed. 
+How can you improve the efficiency of the web app and conserve the bandwidth of your web service?
+
+Ideal Answer (5 star)
+In this case, the API response is going to be static for a long period of time, if patent is granted.  
+If patent is NOT granted yet, you may want client to refresh every month or so.
+So, you can simply use the HTTP header to enable proxy caching.
+For granted patents:
+Expires:
+For non-granted patents:
+Expires:
+Make sure there is no "Cache-Control: " header with "no-cache" in the response.
+This will enable clients to issue "GET" request with "If-Modified-Since" header and API implementation can simply return "304 Not Modified" instead of sending all the data about the patent.
+Based on large Expires headers, many downstream proxies or browser will use optimization algorithm to not even refresh the content from server.
+
+23. REST API: Dealing with response time SLA
+You are writing a micro service that has signed up for certain SLA of response time. 
+Let's say, you must respond within 1 second of receiving the request. However, your micro service depends on 3 external micro services with 500 ms SLA each.
+
+How would you ensure that you meet your SLA most of the times?
+
+Ideal Answer (5 star)
+REST API Caching is the primary solution to meet the response time SLA requirements. 
+You should cache the response from the other micro services; with proper mechanism to deal with staleness of the cache.
+
+
+24. Scenario: Fault Tolerance
+Describe a situation where a critical microservice in your project experienced downtime. How did you implement fault tolerance, 
+and what strategies or technologies did you employ to ensure the resilience of the system?
+
+Ideal Answer (5 star)
+
+Circuit Breaker Pattern:
+Implemented a circuit breaker pattern to detect and handle failures.
+Tripped the circuit when failures exceeded a threshold, preventing further requests.
+Retry Mechanisms:
+Introduced automatic retry mechanisms for transient errors.
+Configured exponential backoff to avoid overwhelming the service.
+Graceful Degradation:
+Implemented graceful degradation by providing limited functionality during degraded states.
+Ensured essential functionalities remained available even in degraded mode.
+Fallback Mechanisms:
+Employed fallback mechanisms to switch to alternative methods or default values when the service was unavailable.
+Monitoring and Alerts:
+Set up continuous monitoring for the microservice.
+Configured alerts to notify the team of downtimes or performance issues.
+Load Balancing and Redundancy:
+Implemented load balancing to distribute traffic evenly across multiple instances.
+Utilized redundant instances and a failover mechanism for high availability.
