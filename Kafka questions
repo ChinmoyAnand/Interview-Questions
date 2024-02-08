@@ -1,0 +1,13 @@
+Kafka Interview
+
+1. How do you handle message delivery guarantees in Kafka? Can you describe scenarios where you might choose different levels of guarantees?
+
+Ideal Answer (5 star)
+Kafka provides three levels of message delivery guarantees: at most once, at least once, and exactly once. The choice depends on the specific requirements of the application. For scenarios where data loss is acceptable, such as in real-time monitoring or logging, I might opt for at most once delivery to prioritize low latency. In contrast, for critical data that must not be lost or duplicated, such as financial transactions, I'd choose exactly once semantics, even though it might come with a performance overhead. At least once delivery provides a balance between reliability and performance and is suitable for many use cases where occasional duplicates can be handled gracefully.
+
+2. magine you're tasked with implementing a real-time analytics system using Kafka. How would you design the Kafka topics and consumers to efficiently process and analyze incoming data streams?
+
+Ideal Answer (5 star)
+For a real-time analytics system, I would design the Kafka topics based on the types of data to be analyzed and the desired granularity of analysis. For instance, I might have separate topics for different types of events such as user actions, system metrics, or business transactions. Within each topic, I would partition data based on relevant keys or attributes to ensure parallel processing and scalability. Additionally, I would configure appropriate retention policies and compaction strategies to manage data retention and ensure efficient storage usage. As for consumers, I would implement specialized analytics consumers tailored to specific use cases or data types. These consumers would subscribe to the relevant topics and apply real-time processing and aggregation logic to derive insights from incoming data streams. To optimize performance, I would parallelize data processing using Kafka Streams or similar stream processing frameworks. Furthermore, I would leverage stateful processing to maintain contextual information and support complex analytics operations such as windowed aggregations or sessionization. Overall, the goal would be to design a scalable and flexible architecture capable of handling high-volume data streams while providing timely and accurate analytics results.
+
+3. 
