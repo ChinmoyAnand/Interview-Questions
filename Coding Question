@@ -81,7 +81,8 @@ Target number = 3 Output : 2
 
 1. Find the sum of all even present in the List of Integer using Stream APIs and without using sum method?
 2. Increment salary by 10% then return the list of employees with a salary greater than 10000?
-3. Write a program to print the first non-repeating character in the given string using java8
+3. Write a program to print the first non-repeating character in the given string using java8?
+4. How to find duplicate elements in a given integers list in java using Stream functions?
 
 
 
