@@ -83,6 +83,13 @@ Target number = 3 Output : 2
 2. Increment salary by 10% then return the list of employees with a salary greater than 10000?
 3. Write a program to print the first non-repeating character in the given string using java8?
 4. How to find duplicate elements in a given integers list in java using Stream functions?
+5. Find the minimum value from the list of Integer using stream APIs and without using the min method on Stream
+Find the minimum value from the list of Integer using stream APIs and without using the min method on Stream
+
+list.stream().reduce((a,b) -> a < b)
+
+6. 
+
 
 
 
