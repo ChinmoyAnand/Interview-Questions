@@ -1,15 +1,37 @@
-How would you implement SSO for Microservice Architecture?
-SSO allows a user or entity to log in once and gain access to multiple systems. In the context of a microservices architecture, SSO can have two meanings: Authentication of end-users – It’s very convenient for end-users to have one central login, preferably using existing credentials, instead of requiring new credentials to log into your app. You can use identity and access management (IAM) solutions to set up a user database and define permissions for your user-facing microservices. Microservices can redirect users to the IAM system for authentication, receive an encrypted SSO token, and then use it to log in users on subsequent attempts. Microservices can also use the IAM system for authorization, and the SSO token can specify which resources the user is permitted to access. Authentication of microservices – You can also enable SSO for microservices that need to connect to other microservices, or to external services requesting access via API. Here you need to authorize a software entity or service account, not human users. You can use the same IAM solution. When a software entity requires access, it can be redirected to the IAM, and the IAM system provides an SSO token they can use in future API calls. JSON Web Tokens JSON Web Token (JWT) provides a mechanism for sharing a set of claims or properties from a client to a microservices application in an encrypted and secure way. JWTs can also secure communication between services or pass end-user context and data between microservices. For example, you can use a JWT token to pass the ID of the calling microservice, the ID of the client, or the system that initiated the request. You can also store authorization and authentication properties in a JWT token and share them between multiple clients and servers. Learn more in our detailed guide to JWT authentication OAuth API Authentication OAuth 2.0 provides an industry-standard protocol for authorizing users in distributed systems. In the context of microservices, the OAuth 2.0 client credential flow supports secure server-to-server communication between API clients and API servers. The OAuth framework reduces the burden on developers, eliminating the need to build their own authentication mechanism in each microservice. OpenID Connect (OIDC) extends OAuth to add federated identities, making it possible to set up delegated authorization. Together, these two layers allow developers to build systems that interact with multiple identity providers. With OIDC and OAuth 2.0, it’s also possible to retrieve a user ID by sending an access token to the user information endpoint. The path to this endpoint can be determined using an OIDC lookup.
+1) How would you implement SSO for Microservice Architecture?
+
+SSO allows a user or entity to log in once and gain access to multiple systems. In the context of a microservices architecture, 
+SSO can have two meanings: Authentication of end-users – It’s very convenient for end-users to have one central login, 
+preferably using existing credentials, instead of requiring new credentials to log into your app. 
+You can use identity and access management (IAM) solutions to set up a user database and define permissions for your user-facing microservices. 
+Microservices can redirect users to the IAM system for authentication, receive an encrypted SSO token, and then use it to log in users on subsequent attempts. 
+Microservices can also use the IAM system for authorization, and the SSO token can specify which resources the user is permitted to access. 
+Authentication of microservices – You can also enable SSO for microservices that need to connect to other microservices, 
+or to external services requesting access via API. Here you need to authorize a software entity or service account, not human users. 
+You can use the same IAM solution. When a software entity requires access, it can be redirected to the IAM, 
+and the IAM system provides an SSO token they can use in future API calls. 
+JSON Web Tokens JSON Web Token (JWT) provides a mechanism for sharing a set of claims or properties from a client to a microservices 
+application in an encrypted and secure way. JWTs can also secure communication between services or pass end-user context and data between microservices. 
+For example, you can use a JWT token to pass the ID of the calling microservice, the ID of the client, or the system that initiated the request. 
+You can also store authorization and authentication properties in a JWT token and share them between multiple clients and servers. 
+Learn more in our detailed guide to JWT authentication OAuth API Authentication OAuth 2.0 provides an industry-standard protocol for 
+authorizing users in distributed systems. In the context of microservices, the OAuth 2.0 client credential flow supports secure server-to-server
+communication between API clients and API servers. The OAuth framework reduces the burden on developers, 
+eliminating the need to build their own authentication mechanism in each microservice. 
+OpenID Connect (OIDC) extends OAuth to add federated identities, making it possible to set up delegated authorization. 
+Together, these two layers allow developers to build systems that interact with multiple identity providers. 
+With OIDC and OAuth 2.0, it’s also possible to retrieve a user ID by sending an access token to the user information endpoint. 
+The path to this endpoint can be determined using an OIDC lookup.
 
 
-Simulate a "hat game"
+2) Simulate a "hat game"
 
-WebServices backend design Interview Question: Server to server APIs
-Your backend service is depended upon other external services where your threads are making connections, sending request, receiving response and closing connections.
 
+3)Your backend service is depended upon other external services where your threads are making connections, sending request, 
+receiving response and closing connections.
 How would you optimize this?
 
-What are the key features of Microservices?
+4) What are the key features of Microservices?
 
 Decoupling – Services within a system are largely decoupled. So the application as a whole can be easily built, altered, and scaled
 Componentization – Microservices are treated as independent components that can be easily replaced and upgraded
@@ -20,48 +42,52 @@ Responsibility – Microservices do not focus on applications as projects. Inste
 Decentralized Governance – The focus is on using the right tool for the right job. That means there is no standardized pattern or any technology pattern. Developers have the freedom to choose the best useful tools to solve their problems
 Agility – Microservices support agile development. Any new feature can be quickly developed and discarded again
 
-Your REST API is designed to handle large volumes of requests from multiple clients simultaneously. However, the API is experiencing occasional outages due to high traffic. How would you optimize the API to handle the load and prevent these outages?
+5) Your REST API is designed to handle large volumes of requests from multiple clients simultaneously. 
+However, the API is experiencing occasional outages due to high traffic. How would you optimize the API to handle the load and prevent these outages?
 
-What is immutability concept in java and Why String class is immutable in Java?
-Which one is better to use char array or String? What is immutability concept in java and Why String class is immutable in Java?
+6) What is immutability concept in java and Why String class is immutable in Java?
 
+7) Which one is better to use char array or String? What is immutability concept in java and Why String class is immutable in Java?
 
-Ideal Answer (5 star)
 String is immutable for several reasons:
-Security: parameters are typically represented as String in network connections, database connection urls, usernames/passwords etc. If it were mutable, these parameters could be easily changed.
-Synchronization and concurrency: making String immutable automatically makes them thread safe thereby solving the synchronization issues.
+Security: parameters are typically represented as String in network connections, database connection urls, usernames/passwords etc. 
+If it were mutable, these parameters could be easily changed.
+Synchronization and concurrency: making String immutable automatically makes them thread-safe thereby solving the synchronization issues.
 Caching: when compiler optimizes your String objects, it sees that if two objects have same value (a="test", and b="test") and thus you need only one string object (for both a and b, these two will point to the same object).
-Class loading: String is used as arguments for class loading. If mutable, it could result in wrong class being loaded (because mutable objects change their state).
+Class loading: String is used as an argument for class loading. If mutable, it could result in the wrong class being 
+loaded (because mutable objects change their state).
 
 
-How to enable Actuator in Spring boot application?
+8) How to enable Actuator in the Spring boot application?
 
-You are required to change the logic of a module that many other modules have dependency on. How would you go about making the changes without impacting dependent systems.
+9) You are required to change the logic of a module that many other modules have dependency on. 
+How would you go about making the changes without impacting dependent systems.
 
 
-What Happens If A Try-catch-finally Statement Does Not Have A Catch Clause To Handle An Exception That Is Thrown Within The Body Of The Try Statement?
+10) What Happens If A Try-catch-finally Statement Does Not Have A Catch Clause To Handle An Exception That Is Thrown Within The Body Of The Try Statement?
 
-You are asked to design an application, which validates data with 100+ rules to comply with the government compliance requirements and tax laws. These compliance requirements can change and the application need to quickly and easily adapt to changing requirements.
+11) You are asked to design an application, which validates data with 100+ rules to comply with the government compliance requirements and tax laws. 
+These compliance requirements can change and the application need to quickly and easily adapt to changing requirements.
 
-I created a key in North Virginia region to encrypt my data in Oregon region. I also added three users to the key and an external AWS account. Then, to encrypt an object in S3, when I tried to use the same key, it was not listed. Where did I go wrong?
+12) I created a key in North Virginia region to encrypt my data in Oregon region. I also added three users to the key and an external AWS account. 
+Then, to encrypt an object in S3, when I tried to use the same key, it was not listed. Where did I go wrong?
 
-How will you configure an Amazon S3 bucket to serve static assets for your public web application?
+13) How will you configure an Amazon S3 bucket to serve static assets for your public web application?
 
-How to generate javadocs in Maven?
+14) How to generate javadocs in Maven?
 
-You are required to change the logic of a module that many other modules have dependency on. How would you go about making the changes without impacting dependent systems.
+15) You are required to change the logic of a module that many other modules have dependency on. 
+How would you go about making the changes without impacting dependent systems.
 
-You are asked to design an application, which validates data with 100+ rules to comply with the government compliance requirements and tax laws. These compliance requirements can change and the application need to quickly and easily adapt to changing requirements.
+16) Explain scenarios when we use shallow copy and when go for deep copy.
 
-Explain scenarios when we use shallow copy and when go for deep copy.
+17) How to create a custom implementation of HttpMessageConverter to support a new type of request/response?
 
-How to create a custom implementation of HttpMessageConverter to support a new type of request/response?
+18) Explain the architectural style for creating web API?
 
-Explain the architectural style for creating web API?
+19) What are some best practices to make API testing successful?
 
-What are some best practices to make API testing successful?
-
-What are the best practices for developing RESTful web services?
+20) What are the best practices for developing RESTful web services?
 
 “Maven uses convention over configuration” - Why is it so?
 
@@ -83,7 +109,7 @@ Let’s say we want to develop a microservice that will send product recommendat
 
 In Orchestration approach, this new microservice for recommendations will make synchronous calls to order service and fetch the relevant data, then based on his past purchases we will calculate the recommendations. Doing this for a million users will become cumbersome and will tightly couple the two microservices.
 
-In Choreography approach, we will use event-based Asynchronous communication where whenever a user makes a purchase, an event will be published by order service. Recommendation service will listen to this event and start building user recommendation. This is a loosely coupled approach and highly scalable. The event, in this case, does not tell about the action, but just the data.
+In Choreography approach, we will use event-based Asynchronous communication where whenever a user makes a purchase, an event will be published by order service. The recommendation service will listen to this event and start building user recommendation. This is a loosely coupled approach and highly scalable. The event, in this case, does not tell about the action, but just the data.
 
 
 How do you handle cross-cutting concerns such as logging, caching, and security in a Springboot application?
