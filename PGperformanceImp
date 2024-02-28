@@ -1,0 +1,23 @@
+PostGres Improvements:
+pg_stat_statements to be enabled
+https://www.bytebase.com/docs/slow-query/enable-pg-stat-statements-for-postgresql/
+
+automate=# select
+  (total_exec_time / calls) as avg_millis,
+  calls num_calls,
+  query
+from pg_stat_statements
+order by 1 desc limit 20;
+
+
+
+automate=# select
+  (total_exec_time / 1000 / 3600) as total_hours,
+  (total_exec_time / 1000) as total_seconds,
+  (total_exec_time / calls) as avg_millis,
+  calls num_calls,
+  query
+from pg_stat_statements
+order by 1 desc limit 10;
+
+Use PERCONA monitring tools to see dashboard
