@@ -25,4 +25,6 @@ and registering the Amazon EC2 instances with it
 Ideal Answer (5 star)
 Application Load Balancer: It supports path-based routing of the traffic and hence helps in enhancing the performance of the application structured as smaller services. Using application load balancer, the traffic can be routed based on the requests made. In this case scenario, the traffic where requests are made for rendering images can be directed to the servers only deployed for rendering images and the traffic where the requests are made for computing can be directed to the servers deployed only for general computing purposes.
 
-6. 
+6. How would you deploy and orchestrate microservices using Kubernetes? Discuss the benefits of containerization for microservices, container orchestration 
+features provided by Kubernetes, such as pod scheduling, service discovery, scaling, and rolling updates,
+and how you would leverage them to manage microservices at scale.
