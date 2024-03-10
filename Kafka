@@ -33,3 +33,7 @@ For a real-time analytics system, I would design the Kafka topics based on the t
 7. How do consumers consumes messages in Kafka?
 
 The transfer of messages is done in Kafka by making use of send file API. The transfer of bytes occurs using this file through the kernel-space and the calls between back to the kernel and kernel user.
+
+8. What role does ZooKeeper play in a cluster of Kafka?
+
+Apache ZooKeeper acts as a distributed, open-source configuration and synchronization service, along with being a naming registry for distributed applications. It keeps track of the status of the Kafka cluster nodes, as well as of Kafka topics, partitions, etc. Since the data is divided across collections of nodes within ZooKeeper, it exhibits high availability and consistency. When a node fails, ZooKeeper performs an instant failover migration. ZooKeeper is used in Kafka for managing service discovery for Kafka brokers, which form the cluster. ZooKeeper communicates with Kafka when a new broker joins, when a broker dies, when a topic gets removed, or when a topic is added so that each node in the cluster knows about these changes. Thus, it provides an in-sync view of the Kafka cluster configuration.
