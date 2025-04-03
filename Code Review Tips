@@ -1,0 +1,67 @@
+Tip 1:
+Spotting Common Mistakes
+i) Checking for HardCoded Values for ORDER STATUS instead of Enums.
+ii) No try-catch block in business logic 
+iii)Not following coding convention like camelCase , indention etc
+
+Tip2:
+NULL CHECK
+if (customer.Orders.Count > 0) 
+check first for customer Obj then orders list then count is safe to check.
+
+Tip3:
+ANTI-PATTERS like no DI 
+public class OrderService
+{
+    private readonly PaymentService _paymentService;
+
+    public OrderService()
+    {
+        _paymentService = new PaymentService();
+    }
+
+    public void ProcessOrder(Order order)
+    {
+        _paymentService.ProcessPayment(order);
+    }
+}
+
+Correct:
+//utilizing DI for decoupling and better testibility
+    public OrderService(IPaymentService paymentService)
+    {
+        _paymentService = paymentService;
+    }
+
+
+Tip3:
+DRY(Don't Repeat Yourself) Principle
+The same logic is being used in multiple places. It means if there is a change in logic we have to manually change it everywhere. 
+Instead, use a function.
+
+
+Tip4: Magic Numbers
+
+Move these kind of things to config/db/central place
+{
+  "TaxSettings": {
+    "IncomeSlabs": [50000, 100000, 200000],  // Income thresholds
+    "TaxRates": [0.10, 0.15, 0.20, 0.30]     // Corresponding tax rates
+  }
+
+Things to keep in mind during the code review
+Now, it is important to be professional and respectful while reviewing the code. From my experience here's the guide that every senior must follow to maintain a positive environment in the team:
+
+Be Respectful: Remember, the goal is to improve the code, not criticize the person. Approach the review with kindness and professionalism. Focus on making the code better, not on pointing out mistakes.
+Be Constructive: Instead of simply saying, "This is wrong," say something like this, "I think it might be better if we do it this way because…". This will help the other person learn and grow.
+Ask Questions: Do not assume anything. If you don't understand anything then it's better to ask questions such as "Why did you use this?". This response might give you enough details and you can review it better.
+Be Clear and Specific: The feedback should be straight and direct. Instead of saying " This doesn't look good". Mention what exactly isn't good here and what needs to be done instead.
+Keep It Balanced: Try to balance your feedback by pointing out what works well in the code too. If something is done well, acknowledge it. It's not just about finding problems, but also about celebrating good practices.
+Stay Open-Minded: Be open to different approaches. You may have your way of doing things, but others might have valid reasons for their choices. Keep the conversation collaborative rather than defensive.
+Be Patient: Not everyone may be at the same level of experience. If you see a mistake or something basic being overlooked, take a moment to explain it clearly without sounding condescending. Help others learn, not just point out errors.
+Don't Nitpick: Avoid over-analyzing smaller details that do not have a significant impact on the functionality. As long as it is a quality code it should be good enough.
+Personal Bias: Sometimes we have our own biases. For example, you like to use spaces but the developer has tabs everywhere. We should ignore such biases and do a meaningful review.
+Respect Time: This is non-negotiable. Everyone has a deadline to follow. Give thoughtful yet concise feedback so that they can implement in the timeline.
+
+
+
