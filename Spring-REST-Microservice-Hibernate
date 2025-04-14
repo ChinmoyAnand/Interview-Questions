@@ -453,4 +453,14 @@ By following these steps, the custom starter can be included in any Spring Boot 
 
 
 
-35. 
+35. Scaling JMS for High Availability
+Your team needs to scale a JMS-based application for high availability and load balancing. What architectural changes would you propose to achieve this?
+Ideal Answer (5 Star)
+To scale a JMS-based application, I would propose setting up a clustered JMS provider with multiple instances to distribute the load. Using a message broker like ActiveMQ or RabbitMQ, which supports clustering and high availability, can help achieve this. Configuring connection factories with failover and load balancing capabilities ensures clients can connect to any available broker instance. Implementing a load balancer in front of the JMS cluster can distribute client requests evenly. Additionally, ensuring that message producers and consumers are stateless and can run in parallel instances helps scale the application horizontally.
+
+36. Database Sharding Strategy
+Your application's database has grown significantly, leading to performance issues. You're considering database sharding to improve performance. What factors would you consider in designing a sharding strategy?
+Ideal Answer (5 Star)
+When designing a sharding strategy, I would consider factors such as the data access patterns, size of the dataset, and future scalability requirements. A key decision is choosing the sharding key, which should evenly distribute data across shards while minimizing cross-shard queries. Common sharding strategies include range-based, hash-based, and geographical sharding, each suitable for different types of workloads. I would also plan for shard rebalancing to accommodate future growth and implement strategies to handle distributed transactions if necessary. Monitoring and maintaining the shards for performance and consistency are also critical aspects of a sharding strategy.
+
+37. 
