@@ -259,4 +259,25 @@ In Orchestration approach, this new microservice for recommendations will make s
 
 In Choreography approach, we will use event-based Asynchronous communication where whenever a user makes a purchase, an event will be published by order service. Recommendation service will listen to this event and start building user recommendation. This is a loosely coupled approach and highly scalable. The event, in this case, does not tell about the action, but just the data.
 
-28. 
+28. Handling Concurrent Modifications
+You are tasked with developing a feature for a high-traffic e-commerce application where multiple users can update product information simultaneously. How would you handle concurrent modifications to ensure data consistency?
+Ideal Answer (5 Star)
+To handle concurrent modifications and ensure data consistency, I would implement optimistic locking using a version field in the database. This approach involves adding a version number to the product information. When a user updates the product, the application checks the current version against the version in the database. If they match, the update proceeds and the version is incremented. If not, it indicates another transaction has modified the data, and an exception is thrown for the user to retry. Here's a simplified example using Java:
+
+
+@Entity
+public class Product {
+    @Id
+    private Long id;
+    private String name;
+    private Double price;
+    @Version
+    private Integer version;
+    // Getters and setters
+}
+
+
+In a Spring Data JPA environment, the @Version annotation handles versioning automatically. This strategy minimizes locking and improves performance in high-concurrency environments.
+
+
+29.
