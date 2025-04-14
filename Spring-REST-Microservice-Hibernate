@@ -280,4 +280,177 @@ public class Product {
 In a Spring Data JPA environment, the @Version annotation handles versioning automatically. This strategy minimizes locking and improves performance in high-concurrency environments.
 
 
-29.
+29. Data Integrity with Transactions
+You are developing a banking application where multiple operations need to be atomic to ensure data integrity during money transfers between accounts. How would you ensure transactional integrity in your Java application?
+Ideal Answer (5 Star)
+To ensure transactional integrity in a banking application, I would use the following approaches:
+
+    1. **ACID Transactions**: Use database transactions to ensure atomicity, consistency, isolation, and durability. In Java, this can be achieved using JPA or Spring's `@Transactional` annotation.
+
+    2. **Transaction Propagation**: Configure transaction propagation settings to control how transactions are handled across service boundaries.
+
+    3. **Isolation Levels**: Choose an appropriate isolation level (e.g., READ_COMMITTED) to balance consistency and concurrency.
+
+    4. **Two-Phase Commit**: For distributed transactions across multiple database systems, use a two-phase commit protocol.
+
+Example of using Spring's `@Transactional`:
+
+
+@Service
+public class BankingService {
+    @Transactional
+    public void transferFunds(Account from, Account to, BigDecimal amount) {
+        from.debit(amount);
+        to.credit(amount);
+        accountRepository.save(from);
+        accountRepository.save(to);
+    }
+}
+
+
+This setup ensures that all operations within the method execute within a single transaction, maintaining data integrity.
+
+
+30. Handling High Traffic on REST API
+You are responsible for a REST API that is experiencing a significant increase in traffic, leading to performance degradation. How would you optimize the API to handle the increased load while maintaining performance?
+Ideal Answer (5 Star)
+To handle high traffic, I would implement several strategies: 
+1. **Caching**: Utilize a caching layer (like Redis or Memcached) to store frequently accessed data, reducing database load. 
+2. **Load Balancing**: Use a load balancer to distribute incoming requests across multiple server instances, ensuring no single server is overwhelmed. 
+3. **Database Optimization**: Optimize database queries and indexes. Consider read replicas for scaling out the database. 
+4. **Asynchronous Processing**: Offload time-consuming tasks to background jobs using a message queue (like RabbitMQ or Kafka). 
+5. **Connection Pooling**: Use connection pooling to efficiently manage database connections. 
+6. **Rate Limiting**: Implement rate limiting to prevent abuse and ensure fair usage. 
+7. **Monitoring and Alerts**: Set up monitoring to track performance metrics and alerts for unusual spikes in traffic. 
+8. **Horizontal Scaling**: Add more instances to handle increased load, taking advantage of cloud-based solutions for elastic scaling.
+
+
+
+31. Designing a RESTful API for a New Feature
+Your team is tasked with implementing a new feature that requires a RESTful API endpoint. Describe the process you would follow to design and implement this API, considering RESTful principles and best practices.
+Ideal Answer (5 Star)
+The process involves several key steps: 
+1. **Requirement Gathering**: Understand the feature requirements and data models. 
+2. **Endpoint Design**: Define clear, consistent, and meaningful URI paths using nouns for resources (e.g., `/users/{id}/orders`). 
+3. **HTTP Methods**: Use appropriate HTTP methods (GET, POST, PUT, DELETE) for different operations. 
+4. **Status Codes**: Return proper HTTP status codes for responses (e.g., 200 for success, 404 for not found). 
+5. **Request and Response Format**: Use JSON for data interchange and ensure proper validation and error handling. 
+6. **Security**: Implement authentication and authorization (e.g., OAuth2, JWT). 
+7. **Documentation**: Document the API using tools like Swagger/OpenAPI. 
+8. **Versioning**: Plan for API versioning to handle future changes without breaking existing clients. 
+9. **Testing**: Write unit and integration tests to ensure the API works as expected.
+
+
+32. Implementing Transactions
+You need to implement a feature that handles multiple related database operations. How would you ensure these operations maintain data integrity, especially in the event of a failure?
+Ideal Answer (5 Star)
+To ensure data integrity across multiple related operations, I would use transactions. Transactions allow multiple operations to be treated as a single unit of work, ensuring either all operations succeed or none. I would use the SQL transaction statements: BEGIN, COMMIT, and ROLLBACK. If an error occurs during any operation, a ROLLBACK is issued to revert changes. Ensuring proper error handling logic is also crucial.
+Here's a basic example of using transactions:
+BEGIN; UPDATE accounts SET balance = balance - 100 WHERE account_id = 1; UPDATE accounts SET balance = balance + 100 WHERE account_id = 2; IF error THEN ROLLBACK; ELSE COMMIT; END IF;
+
+
+33. Securing a REST API with Spring Security
+You need to secure a REST API in your Spring Boot application to ensure that only authenticated users can access it. Outline how you would achieve this using Spring Security.
+Ideal Answer (5 Star)
+To secure a REST API in a Spring Boot application, I would integrate Spring Security to handle authentication and authorization. Hereâ€™s a step-by-step approach:
+
+1. Add Spring Security dependency to pom.xml:
+
+```xml
+
+    org.springframework.boot
+    spring-boot-starter-security
+
+```
+
+2. Create a SecurityConfiguration class to configure HTTP security:
+
+```java
+@Configuration
+@EnableWebSecurity
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+            .csrf().disable()
+            .authorizeRequests()
+                .antMatchers("/api/public/**").permitAll()
+                .anyRequest().authenticated()
+            .and()
+            .httpBasic();
+    }
+
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.inMemoryAuthentication()
+            .withUser("user")
+            .password(passwordEncoder().encode("password"))
+            .roles("USER");
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+}
+```
+
+This configuration disables CSRF for simplicity, sets up basic authentication, and secures all endpoints except those under /api/public/. For a production environment, I would consider using JWT tokens for stateless authentication.
+
+
+
+
+34. Creating a Custom Spring Boot Starter
+Your company wants to standardize certain configurations and dependencies across multiple Spring Boot applications. Describe how you would create a custom Spring Boot starter to achieve this.
+Ideal Answer (5 Star)
+Creating a custom Spring Boot starter involves packaging a set of common dependencies and configurations into a reusable format. Here's how I would approach it:
+
+1. Create a new Maven project for the starter:
+
+```xml
+com.example
+custom-spring-boot-starter
+1.0.0
+jar
+```
+
+2. Define common dependencies in the `pom.xml`:
+
+```xml
+
+    org.springframework.boot
+    spring-boot-starter
+
+
+    com.example
+    common-library
+
+```
+
+3. Create an `auto-configuration` class:
+
+```java
+@Configuration
+@ConditionalOnClass(SomeCommonClass.class)
+public class CustomAutoConfiguration {
+
+    @Bean
+    public SomeService someService() {
+        return new SomeServiceImpl();
+    }
+}
+```
+
+4. Include a `spring.factories` file to register the auto-configuration:
+
+```
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.example.CustomAutoConfiguration
+```
+
+By following these steps, the custom starter can be included in any Spring Boot application to apply the standardized configuration and dependencies automatically.
+
+
+
+35. 
