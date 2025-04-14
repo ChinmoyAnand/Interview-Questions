@@ -37,3 +37,12 @@ The transfer of messages is done in Kafka by making use of send file API. The tr
 8. What role does ZooKeeper play in a cluster of Kafka?
 
 Apache ZooKeeper acts as a distributed, open-source configuration and synchronization service, along with being a naming registry for distributed applications. It keeps track of the status of the Kafka cluster nodes, as well as of Kafka topics, partitions, etc. Since the data is divided across collections of nodes within ZooKeeper, it exhibits high availability and consistency. When a node fails, ZooKeeper performs an instant failover migration. ZooKeeper is used in Kafka for managing service discovery for Kafka brokers, which form the cluster. ZooKeeper communicates with Kafka when a new broker joins, when a broker dies, when a topic gets removed, or when a topic is added so that each node in the cluster knows about these changes. Thus, it provides an in-sync view of the Kafka cluster configuration.
+
+
+9. Implementing Transactions in Kafka Streams
+You are tasked with implementing a Kafka Streams application that requires transactional guarantees. How would you ensure that the processing and output of the stream are handled transactionally?
+Ideal Answer (5 Star)
+In Kafka Streams, to ensure transactional processing, I would enable exactly-once semantics by setting `processing.guarantee` to `exactly_once_v2` in the Streams configuration. This setting ensures that Kafka Streams commits both the input offsets and the output results atomically. Additionally, I would configure the source and sink topics with `enable.idempotence=true` and ensure that the transactional ID is set for the producer to maintain a consistent transactional context. Using Kafka's built-in support for transactions ensures that each message is processed exactly once, and results are applied only if the entire transactional unit succeeds.
+
+
+10. 
