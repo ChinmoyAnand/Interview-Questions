@@ -463,4 +463,31 @@ Your application's database has grown significantly, leading to performance issu
 Ideal Answer (5 Star)
 When designing a sharding strategy, I would consider factors such as the data access patterns, size of the dataset, and future scalability requirements. A key decision is choosing the sharding key, which should evenly distribute data across shards while minimizing cross-shard queries. Common sharding strategies include range-based, hash-based, and geographical sharding, each suitable for different types of workloads. I would also plan for shard rebalancing to accommodate future growth and implement strategies to handle distributed transactions if necessary. Monitoring and maintaining the shards for performance and consistency are also critical aspects of a sharding strategy.
 
-37. 
+37. Handling Database Transactions in Spring Boot
+You are working on a Spring Boot application that requires handling complex business transactions involving multiple database operations. A failure in any operation should result in a rollback of all operations. How would you implement this?
+Ideal Answer (5 Star)
+To handle database transactions in Spring Boot, you should leverage the @Transactional annotation provided by Spring. This annotation can be applied to service layer methods to ensure that all operations within the method are executed within a single transaction. If any operation fails, Spring will automatically roll back the transaction. You should ensure that your database operations are executed in a method annotated with @Transactional. Additionally, you should handle exceptions properly and avoid performing operations that are not part of the transaction within the annotated method.
+
+38. Optimizing Spring Boot Application Performance
+You have deployed a Spring Boot application and are noticing performance bottlenecks. The application needs to handle a high volume of requests efficiently. What strategies would you use to optimize its performance?
+Ideal Answer (5 Star)
+To optimize the performance of a Spring Boot application, you should consider several strategies:
+
+1. **Profile and Monitor:** Use profiling tools like Spring Boot Actuator, JProfiler, or VisualVM to identify bottlenecks and monitor application performance.
+2. **Database Optimization:** Ensure efficient database access by optimizing queries and using pagination. Consider using connection pooling with a tool like HikariCP.
+3. **Caching:** Implement caching to reduce database load using Spring Cache abstraction or a tool like Redis.
+4. **Concurrency:** Use asynchronous processing and parallel streams to handle requests concurrently.
+5. **Resource Management:** Configure thread pools and increase memory allocation as needed.
+6. **Compression and Minification:** Enable HTTP compression and minification of static resources.
+
+Example of caching setup:
+@Configuration
+@EnableCaching
+public class CacheConfig {
+  @Bean
+  public CacheManager cacheManager() {
+    return new ConcurrentMapCacheManager("users");
+  }
+}
+
+39. 
