@@ -100,4 +100,20 @@ GROUP BY customer_id
 ORDER BY total_spent DESC
 LIMIT 3;
 
-12) 
+12) Handling Disaster Recovery
+Your company needs a disaster recovery plan for their application hosted on the cloud. What steps and services would you use to ensure minimal downtime and data loss?
+Ideal Answer (5 Star)
+For a robust disaster recovery plan, I would focus on backups, data replication, and failover strategies. In AWS, I would use AWS Backup for regular backups and AWS RDS Multi-AZ deployments for database resiliency. I would also set up cross-region replication for S3 and use Route 53 for DNS failover. In Azure, I would use Azure Site Recovery for orchestrated disaster recovery and Azure Backup for data protection. Azure SQL Database Geo-Replication would ensure data availability. For GCP, I would utilize Google Cloud Storage for backups and set up multi-region storage for redundancy. I would also use Google Cloud DNS for quick failover. Across all platforms, I would implement regular testing of the disaster recovery plan to ensure readiness and compliance with RTO and RPO objectives.
+
+13) Securing a Cloud Environment
+Your team needs to secure a cloud environment that handles sensitive data. What security measures and services would you implement to protect the data and infrastructure?
+Ideal Answer (5 Star)
+To secure a cloud environment, I would implement a multi-layered security approach. In AWS, I would use IAM roles with least privilege access, enable AWS Shield and WAF for DDoS protection, and use VPC with security groups and NACLs for network security. Encrypting data at rest and in transit using KMS and enabling CloudTrail for auditing are essential. In Azure, I would utilize Azure Active Directory for identity management, Azure Security Center for threat detection, and Azure Key Vault for managing keys and secrets. Implementing NSGs and ASGs would protect the network. For GCP, I would use IAM for access control, Cloud Armor for security protection, and VPC Service Controls for securing APIs. Encrypting data using Cloud KMS and enabling Stackdriver for monitoring are also crucial steps. Across all platforms, regular security audits, penetration testing, and compliance checks would ensure the environment remains secure.
+
+
+14) Ensuring Message Order
+In a financial application using WebSphere MQ, message order is crucial. A recent update has reportedly caused messages to arrive out of order. How would you diagnose and resolve this issue?
+Ideal Answer (5 Star)
+I would first check the configuration of the message queues to ensure that they are set up to maintain order, particularly focusing on the message delivery options. I'd review the application's logic to ensure that it doesn't inadvertently re-sequence messages. I would also verify that any load balancers or message consumers are configured correctly to respect message ordering. If necessary, I'd implement a test to simulate message flow and identify the point at which the order is disrupted. Once identified, I would work on reconfiguring or coding solutions to preserve the sequence.
+
+15) 
